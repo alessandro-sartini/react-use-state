@@ -1,14 +1,28 @@
 const ButtonLanguages = (props) => {
     
 
-    const {id,title, description,isActive}= props
-
+    const {langs}= props
     return (
-
+        
         <div className="btnContainer">
 
-            
-            <button>HTML</button>
+            {
+                langs.map((e) => {
+                    const {id,title, isActive} = e
+                    
+                    return(
+                    <button key={id} className={isActive ? "active" : " "}>
+                        {title}
+                    </button>
+                    
+                    )
+
+
+
+                })
+            }
+
+            {/* <button>HTML</button> */}
 
         </div>
 
