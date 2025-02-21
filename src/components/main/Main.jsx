@@ -12,7 +12,7 @@ const Main = (props) => {
             </h2>
             <ButtonLanguages langs={props.langs}/>
             
-            <LanguagesDescr langs={ props.langs}/>
+            {/* <LanguagesDescr langs={ props.langs}/> */}
         </div>
 
 
