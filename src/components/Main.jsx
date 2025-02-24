@@ -7,7 +7,7 @@ import Card from "./Card";
 
 const Main = () => {
     
-    const { selectedLanguage, SetSelectededLanguage } = useState(null);
+    const [ selectedLanguage, SetSelectededLanguage]  = useState(null);
 
     const renderLanguage = () => languages.map((language) => {
         
@@ -21,58 +21,51 @@ const Main = () => {
                 key={language.id}
                 isActive={active}
                 title={language.title}
-                onClick=
+                selected =
                 {
-                    () => selectedLanguage(language)
+                    () => SetSelectededLanguage(language)
                 }
 
             />
         )
-        const renderSelectedLanguage = () => {
+    })
+
+
+    const renderSelectedLanguage = () => {
                 
-            if(!selectedLanguage) return <h2>non hai selezionato nessun linguaggio</h2>
+        if(!selectedLanguage) return <h2>non hai selezionato nessun linguaggio</h2>
 
-            const { title, description } = selectedLanguage;
+        const { title, description } = selectedLanguage
 
-            return
-            (
-                <Card
-                    title={title}
-                    description={description}
-                />
-            )
-        }
-        return (
-
+        return(
+            <Card
+                title={title}
+                description={description}
+            />
+        )
+    }
+       
+    return (
+        
             <main className="container">
                 <div className="mb-3">
 
-                    {renderLanguage()}
+                {renderLanguage()}
+
+
+                </div>
+
+                <div >
+
+                    {renderSelectedLanguage()}
 
 
                 </div>
 
 
             </main>
-
-        )
-          
-
-    } )
-
-
-    return (
         
-
-        <>
-        
-        </>
-
-
-
     )
-
-
 
 }
 
